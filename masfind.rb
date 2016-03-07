@@ -5,13 +5,14 @@ require 'pp'
 require 'open-uri'
 
 search = "Xcode"
-url = "http://itunes.apple.com/search?entity=macSoftware&limit=50&term=" + search
+limit = 30
+url = "http://itunes.apple.com/search?entity=macSoftware&limit=" + limit + "&term=" + search
 
-#open(url) do |f|
-#  page_string = f.read
-#end
+open(url) do |f|
+  json = f.read
+end
 
-json = File.read('sparrow.json')
+#json = File.read('sparrow.json')
 obj = JSON.parse(json)
 
 #pp obj['resultCount']
