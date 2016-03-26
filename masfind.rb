@@ -19,6 +19,6 @@ obj = JSON.parse(json)
 
 if (obj['resultCount'] != 0)
 	obj['results'].each do |app|
-		puts app["trackId"].to_s + " " + app["trackName"]
+		puts app["trackId"].to_s << " " << app["trackName"] << " (" << app["version"] << ")"
 	end
 end
